@@ -64,6 +64,15 @@
 					android:textColor="@color/black" />
 
 				<!-- TODO: Add the drop down selector of nominees -->
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					style="@style/bold_headline_small"
+					android:layout_marginTop="30dp"
+					android:text="@string/cube_name"
+					android:textColor="@color/black" />
+
+
 
 				<View
 					android:layout_width="match_parent"

@@ -1,5 +1,6 @@
 package com.cube.cubeacademy.activities
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.cube.cubeacademy.databinding.ActivityMainBinding
@@ -19,6 +20,11 @@ class MainActivity : AppCompatActivity() {
 
 		binding = ActivityMainBinding.inflate(layoutInflater)
 		setContentView(binding.root)
+
+		binding.createButton.setOnClickListener {
+			val intent = Intent(this, CreateNominationActivity::class.java)
+			startActivity(intent)
+		}
 
 		populateUI()
 	}
