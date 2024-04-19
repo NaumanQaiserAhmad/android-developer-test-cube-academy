@@ -16,4 +16,16 @@
 	<string name="back_to_home">Back to home</string>
 	<string name="nomination_submitted_body">Thank you for taking the time to fill out this form! Why not nominate another cube?</string>
 	<string name="cube_name">Cube\'s Name</string>
+	<string name="reason_placeholder">David always goes above and beyond with all the work that he does. He’s also a lovey person to work with!</string>
+	<string name="very_unfair">Very Unfair</string>
+	<string name="unfair">Unfair</string>
+	<string name="not_sure">Not Sure</string>
+	<string name="fair">Fair</string>
+	<string name="very_fair">Very Fair</string>
+	<string-array name="spinner_items">
+		<item>Item 1</item>
+		<item>Item 2</item>
+		<item>Item 3</item>
+		<!-- Add more items as needed -->
+	</string-array>
 </resources>

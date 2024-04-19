@@ -1,0 +1,11 @@
+<!-- spinner_with_arrow.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background for the spinner -->
+    <item android:drawable="@drawable/bg_spinner" />
+
+    <!-- Arrow -->
+    <item
+        android:drawable="@drawable/pink_chevron"
+        android:gravity="end|center_vertical"
+        android:right="8dp" />
+</layer-list>

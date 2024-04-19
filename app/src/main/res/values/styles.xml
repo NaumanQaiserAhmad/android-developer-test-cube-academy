@@ -72,4 +72,9 @@
 		<item name="android:elevation">6dp</item>
 		<item name="elevation">6dp</item>
 	</style>
+
+	<style name="CustomSpinnerStyle" parent="Widget.AppCompat.Spinner">
+		<item name="android:background">@android:color/transparent</item>
+		<item name="android:spinnerMode">dropdown</item>
+	</style>
 </resources>
