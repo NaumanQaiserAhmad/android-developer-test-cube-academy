@@ -185,6 +185,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:buttonTint="@color/pink"
+                            android:tag="very_unfair"
                             android:gravity="end|center" />
 
                     </LinearLayout>
@@ -223,6 +224,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:buttonTint="@color/pink"
+                            android:tag="unfair"
                             android:gravity="end|center" />
 
                     </LinearLayout>
@@ -257,10 +259,11 @@
 
                         <!-- RadioButton -->
                         <RadioButton
-                            android:id="@+id/fair_radio_button"
+                            android:id="@+id/not_sure"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:buttonTint="@color/pink"
+                            android:tag="not_sure"
                             android:gravity="end|center" />
 
                     </LinearLayout>
@@ -295,11 +298,12 @@
 
                         <!-- RadioButton -->
                         <RadioButton
-                            android:id="@+id/very_fair_radio_button"
+                            android:id="@+id/fair_radio_button"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:buttonTint="@color/pink"
-                            android:gravity="end|center" />
+                            android:gravity="end|center"
+                            android:tag="fair" />
 
                     </LinearLayout>
 
@@ -333,9 +337,11 @@
 
                         <!-- RadioButton -->
                         <RadioButton
+                            android:id="@+id/very_fair_radio_button"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:buttonTint="@color/pink"
+                            android:tag="very_fair"
                             android:gravity="end|center" />
 
                     </LinearLayout>
