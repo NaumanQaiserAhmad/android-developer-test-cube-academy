@@ -118,6 +118,7 @@
                     android:hint="@string/reason_placeholder"
                     android:inputType="textMultiLine"
                     android:minLines="3"
+                    android:maxLength="285"
                     android:padding="16dp" />
 
 
@@ -144,9 +145,11 @@
                     android:textColor="@color/black" />
 
                 <!-- TODO: Add the Radio button for the feedback -->
-                <RadioGroup
+                <com.cube.cubeacademy.radioextension.RadioGroupExtension
+                    android:id="@id/radio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
                     android:layout_marginTop="16dp">
 
                     <!-- RadioButton 1 -->
@@ -178,10 +181,11 @@
 
                         <!-- RadioButton -->
                         <RadioButton
+                            android:id="@+id/very_unfair_radio_button"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:buttonTint="@color/pink"
-                            android:gravity="end" />
+                            android:gravity="end|center" />
 
                     </LinearLayout>
 
@@ -215,10 +219,11 @@
 
                         <!-- RadioButton -->
                         <RadioButton
+                            android:id="@+id/unfair_radio_button"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:buttonTint="@color/pink"
-                            android:gravity="end" />
+                            android:gravity="end|center" />
 
                     </LinearLayout>
 
@@ -252,10 +257,11 @@
 
                         <!-- RadioButton -->
                         <RadioButton
+                            android:id="@+id/fair_radio_button"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:buttonTint="@color/pink"
-                            android:gravity="end" />
+                            android:gravity="end|center" />
 
                     </LinearLayout>
 
@@ -289,10 +295,11 @@
 
                         <!-- RadioButton -->
                         <RadioButton
+                            android:id="@+id/very_fair_radio_button"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:buttonTint="@color/pink"
-                            android:gravity="end" />
+                            android:gravity="end|center" />
 
                     </LinearLayout>
 
@@ -329,11 +336,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:buttonTint="@color/pink"
-                            android:gravity="end" />
+                            android:gravity="end|center" />
 
                     </LinearLayout>
 
-                </RadioGroup>
+                </com.cube.cubeacademy.radioextension.RadioGroupExtension>
 
             </LinearLayout>
 

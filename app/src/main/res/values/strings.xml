@@ -23,9 +23,9 @@
 	<string name="fair">Fair</string>
 	<string name="very_fair">Very Fair</string>
 	<string-array name="spinner_items">
-		<item>Item 1</item>
-		<item>Item 2</item>
-		<item>Item 3</item>
+		<item>cube 1</item>
+		<item>cube 2</item>
+		<item>cube 3</item>
 		<!-- Add more items as needed -->
 	</string-array>
 </resources>
