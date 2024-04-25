@@ -172,7 +172,10 @@ class CreateNominationActivity : AppCompatActivity() {
                             "Nomination created successfully",
                             Toast.LENGTH_SHORT
                         ).show()
-                        val intent = Intent(this@CreateNominationActivity, NominationSubmittedActivity::class.java)
+                        val intent = Intent(
+                            this@CreateNominationActivity,
+                            NominationSubmittedActivity::class.java
+                        )
                         startActivity(intent)
                     }
                 } ?: run {
@@ -210,7 +213,7 @@ class CreateNominationActivity : AppCompatActivity() {
         cancelButton.setOnClickListener {
             bottomSheetDialog.dismiss()
         }
-        leaveButton.setOnClickListener{
+        leaveButton.setOnClickListener {
             super.onBackPressed()
         }
 

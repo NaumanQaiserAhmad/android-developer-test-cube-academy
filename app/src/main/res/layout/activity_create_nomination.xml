@@ -117,8 +117,8 @@
                     android:gravity="start"
                     android:hint="@string/reason_placeholder"
                     android:inputType="textMultiLine"
-                    android:minLines="3"
                     android:maxLength="285"
+                    android:minLines="3"
                     android:padding="16dp" />
 
 
@@ -149,8 +149,8 @@
                     android:id="@id/radio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="16dp">
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
 
                     <!-- RadioButton 1 -->
                     <LinearLayout
@@ -185,8 +185,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:buttonTint="@color/pink"
-                            android:tag="very_unfair"
-                            android:gravity="end|center" />
+                            android:gravity="end|center"
+                            android:tag="very_unfair" />
 
                     </LinearLayout>
 
@@ -224,8 +224,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:buttonTint="@color/pink"
-                            android:tag="unfair"
-                            android:gravity="end|center" />
+                            android:gravity="end|center"
+                            android:tag="unfair" />
 
                     </LinearLayout>
 
@@ -263,8 +263,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:buttonTint="@color/pink"
-                            android:tag="not_sure"
-                            android:gravity="end|center" />
+                            android:gravity="end|center"
+                            android:tag="not_sure" />
 
                     </LinearLayout>
 
@@ -341,8 +341,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:buttonTint="@color/pink"
-                            android:tag="very_fair"
-                            android:gravity="end|center" />
+                            android:gravity="end|center"
+                            android:tag="very_fair" />
 
                     </LinearLayout>
 

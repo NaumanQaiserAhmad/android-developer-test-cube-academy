@@ -1,90 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:orientation="vertical"
-	tools:context=".activities.NominationSubmittedActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.NominationSubmittedActivity">
 
-	<androidx.appcompat.widget.Toolbar
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:background="@color/black"
-		android:paddingBottom="10dp"
-		android:paddingTop="30dp">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:paddingTop="30dp"
+        android:paddingBottom="10dp">
 
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			style="@style/bold_headline_small"
-			android:layout_gravity="center_horizontal"
-			android:text="@string/nomination_submitted"
-			android:textColor="@color/white" />
-	</androidx.appcompat.widget.Toolbar>
+        <TextView
+            style="@style/bold_headline_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/nomination_submitted"
+            android:textColor="@color/white" />
+    </androidx.appcompat.widget.Toolbar>
 
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="0dp"
-		android:layout_weight="1"
-		android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-		<ImageView
-			android:layout_width="match_parent"
-			android:layout_height="180dp"
-			android:importantForAccessibility="no"
-			android:scaleType="centerCrop"
-			android:src="@drawable/artwork_submitted" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop"
+            android:src="@drawable/artwork_submitted" />
 
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			style="@style/bold_headline_large"
-			android:layout_gravity="center_horizontal"
-			android:layout_marginHorizontal="16dp"
-			android:layout_marginTop="30dp"
-			android:text="@string/nomination_submitted"
-			android:textAlignment="center"
-			android:textColor="@color/black" />
+        <TextView
+            style="@style/bold_headline_large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/nomination_submitted"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
 
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			style="@style/body"
-			android:layout_gravity="center_horizontal"
-			android:layout_marginHorizontal="16dp"
-			android:layout_marginTop="12dp"
-			android:text="@string/nomination_submitted_body"
-			android:textAlignment="center"
-			android:textColor="@color/black" />
-	</LinearLayout>
+        <TextView
+            style="@style/body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/nomination_submitted_body"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+    </LinearLayout>
 
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:background="@color/white"
-		android:clipChildren="false"
-		android:clipToPadding="false"
-		android:elevation="10dp"
-		android:gravity="center_vertical"
-		android:orientation="vertical"
-		android:paddingHorizontal="24dp"
-		android:paddingVertical="20dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:elevation="10dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="20dp">
 
-		<androidx.appcompat.widget.AppCompatButton
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/submit_button"
-			style="@style/button"
-			android:text="@string/create_new_nomination" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/submit_button"
+            style="@style/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/create_new_nomination" />
 
-		<androidx.appcompat.widget.AppCompatButton
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/back_button"
-			style="@style/button_outline"
-			android:layout_marginTop="12dp"
-			android:text="@string/back_to_home" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/back_button"
+            style="@style/button_outline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/back_to_home" />
 
-	</LinearLayout>
+    </LinearLayout>
 </LinearLayout>

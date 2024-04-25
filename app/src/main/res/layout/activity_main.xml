@@ -1,94 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-	android:background="@drawable/bg_green_page"
-	android:orientation="vertical"
-	tools:context=".activities.MainActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_green_page"
+    android:orientation="vertical"
+    tools:context=".activities.MainActivity">
 
-	<androidx.appcompat.widget.Toolbar
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:background="@color/black"
-		android:paddingVertical="20dp">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:paddingVertical="20dp">
 
-		<ImageView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:importantForAccessibility="no"
-			android:layout_gravity="center_horizontal"
-			android:src="@drawable/ic_3sc_toolbar" />
-	</androidx.appcompat.widget.Toolbar>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_3sc_toolbar" />
+    </androidx.appcompat.widget.Toolbar>
 
-	<TextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		style="@style/bold_headline_medium"
-		android:layout_marginHorizontal="20dp"
-		android:layout_marginVertical="24dp"
-		android:text="@string/your_nominations_title"
-		android:textAllCaps="true"
-		android:textColor="@color/black" />
+    <TextView
+        style="@style/bold_headline_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="24dp"
+        android:text="@string/your_nominations_title"
+        android:textAllCaps="true"
+        android:textColor="@color/black" />
 
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="0dp"
-		android:id="@+id/empty_container"
-		android:background="@color/grey_light"
-		android:gravity="center_horizontal"
-		android:layout_weight="1"
-		android:orientation="vertical"
-		android:paddingHorizontal="30dp">
+    <LinearLayout
+        android:id="@+id/empty_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/grey_light"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="30dp">
 
-		<ImageView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:importantForAccessibility="no"
-			android:layout_marginTop="70dp"
-			android:src="@drawable/ic_empty" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_empty" />
 
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			style="@style/bold_headline_medium"
-			android:layout_marginTop="24dp"
-			android:text="@string/empty_body"
-			android:textAlignment="center"
-			android:textAllCaps="true"
-			android:textColor="@color/grey_dark" />
+        <TextView
+            style="@style/bold_headline_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/empty_body"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/grey_dark" />
 
-	</LinearLayout>
+    </LinearLayout>
 
-	<androidx.recyclerview.widget.RecyclerView
-		android:layout_width="match_parent"
-		android:layout_height="0dp"
-		android:id="@+id/nominations_list"
-		android:background="@color/white"
-		android:layout_weight="1"
-		app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-		android:visibility="gone"
-		tools:listitem="@layout/view_nomination_list_item" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/nominations_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/view_nomination_list_item" />
 
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:background="@color/white"
-		android:clipChildren="false"
-		android:clipToPadding="false"
-		android:elevation="10dp"
-		android:paddingHorizontal="24dp"
-		android:paddingVertical="20dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:elevation="10dp"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="20dp">
 
-		<androidx.appcompat.widget.AppCompatButton
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/create_button"
-			style="@style/button"
-			android:text="@string/create_new_nomination" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/create_button"
+            style="@style/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/create_new_nomination" />
 
-	</LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>
