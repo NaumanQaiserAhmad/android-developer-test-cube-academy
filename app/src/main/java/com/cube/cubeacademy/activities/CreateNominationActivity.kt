@@ -1,5 +1,6 @@
 package com.cube.cubeacademy.activities
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -7,14 +8,17 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView
+import android.widget.Button
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.cube.cubeacademy.R
 import com.cube.cubeacademy.databinding.ActivityCreateNominationBinding
 import com.cube.cubeacademy.lib.adapters.NomineeAdapter
 import com.cube.cubeacademy.lib.di.Repository
 import com.cube.cubeacademy.lib.models.Nominee
 import com.cube.cubeacademy.radioextension.RadioGroupExtension
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -27,7 +31,7 @@ import javax.inject.Inject
 class CreateNominationActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCreateNominationBinding
     private lateinit var mRadioGroupPlus: RadioGroupExtension
-    private lateinit var selected_radio: String
+    private lateinit var selectedRadio: String
 
     @Inject
     lateinit var repository: Repository
@@ -48,9 +52,7 @@ class CreateNominationActivity : AppCompatActivity() {
                 // Find the selected radio button using its ID
                 val radioButton = findViewById<RadioButton>(checkedId)
                 // Get the tag associated with the selected radio button
-                selected_radio = radioButton.tag.toString()
-                Log.i("SelectedRadioButtonText", selected_radio ?: "No radio button selected")
-
+                selectedRadio = radioButton.tag.toString()
                 checkConditionsAndEnableButton()
             }
         })
@@ -74,8 +76,6 @@ class CreateNominationActivity : AppCompatActivity() {
                     position: Int,
                     id: Long
                 ) {
-                    val selectedNominee = parent.getItemAtPosition(position)
-                    //Log.d("Spinner", "Selected nominee: $selectedNominee")
                     // Check conditions and enable the submit button
                     checkConditionsAndEnableButton()
                 }
@@ -101,10 +101,6 @@ class CreateNominationActivity : AppCompatActivity() {
             }
         })
 
-        // submit button
-        binding.submitButton.setOnClickListener {
-            onSubmitButtonClick()
-        }
     }
 
     private fun populateUI(nominees: List<Nominee>) {
@@ -118,6 +114,14 @@ class CreateNominationActivity : AppCompatActivity() {
         // Assuming you have already fetched the list of nominees and stored it in a variable called 'nominees'
         val adapter = NomineeAdapter(this, nominees)
         binding.nomineeSpinner.adapter = adapter
+
+        binding.backButton.setOnClickListener {
+            showBottomSheetDialog()
+        }
+        // submit button
+        binding.submitButton.setOnClickListener {
+            onSubmitButtonClick()
+        }
     }
 
     private fun checkConditionsAndEnableButton() {
@@ -145,7 +149,7 @@ class CreateNominationActivity : AppCompatActivity() {
 
         if (nomineeId.isNotBlank() && reason.isNotBlank() && checkedRadioButtonId != -1) {
             // Call the API function to create a nomination
-            createNomination(nomineeId, reason, selected_radio)
+            createNomination(nomineeId, reason, selectedRadio)
         } else {
             // Show an error message or handle the case where any of the required fields are empty
             Toast.makeText(this, "Please fill all required fields", Toast.LENGTH_SHORT).show()
@@ -192,6 +196,26 @@ class CreateNominationActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    @SuppressLint("InflateParams")
+    private fun showBottomSheetDialog() {
+        val bottomSheetDialog = BottomSheetDialog(this)
+        val view = layoutInflater.inflate(R.layout.onback_press_dialog, null)
+
+        // Set up views and click listeners here if needed
+        val cancelButton = view.findViewById<Button>(R.id.cacel)
+        val leaveButton = view.findViewById<Button>(R.id.leave_button)
+
+        cancelButton.setOnClickListener {
+            bottomSheetDialog.dismiss()
+        }
+        leaveButton.setOnClickListener{
+            super.onBackPressed()
+        }
+
+        bottomSheetDialog.setContentView(view)
+        bottomSheetDialog.show()
     }
 
 }

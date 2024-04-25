@@ -22,6 +22,10 @@
 	<string name="not_sure">Not Sure</string>
 	<string name="fair">Fair</string>
 	<string name="very_fair">Very Fair</string>
+	<string name="sure">ARE YOU SURE?</string>
+	<string name="leave_page">If you leave this page, you will loose any progress made.</string>
+	<string name="cancel">CANCEL</string>
+	<string name="leave_page_aknowldge">YES, LEAVE PAGE</string>
 	<string-array name="spinner_items">
 		<item>cube 1</item>
 		<item>cube 2</item>
