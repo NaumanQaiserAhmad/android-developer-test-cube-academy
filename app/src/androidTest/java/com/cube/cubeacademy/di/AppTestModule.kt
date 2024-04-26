@@ -28,5 +28,9 @@ object AppTestModule {
 
 	@Singleton
 	@Provides
+	fun provideMockApiService(): MockApiService = MockApiService()
+
+	@Singleton
+	@Provides
 	fun provideRepository(api: ApiService): Repository = Repository(api)
 }
