@@ -123,6 +123,11 @@ class CreateNominationActivity : AppCompatActivity() {
                 // Get the tag associated with the selected radio button
                 selectedRadio = radioButton.tag.toString()
                 checkConditionsAndEnableButton()
+                resetBackgroundColors()
+
+                val linearLayout = radioButton.parent as LinearLayout
+                // Apply the border highlight to the LinearLayout
+                linearLayout.setBackgroundResource(R.drawable.bg_dark_border)
             }
         })
 
