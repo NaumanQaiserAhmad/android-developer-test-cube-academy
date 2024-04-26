@@ -28,7 +28,9 @@ class NominationsRecyclerViewAdapter :
             /**
              * TODO: This should show the nominee name instead of their id! Where can you get their name from?
              */
-            name.text = item.nomineeId
+            //Added a nullable String to Nomination to handle it simply
+
+            name.text = item.nomineeName
             reason.text = item.reason
         }
     }

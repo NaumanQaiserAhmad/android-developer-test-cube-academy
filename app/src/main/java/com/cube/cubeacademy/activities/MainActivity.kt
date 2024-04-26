@@ -48,6 +48,17 @@ class MainActivity : AppCompatActivity() {
             try {
                 // Fetch the list of nominations from the repository
                 val nominations = repository.getAllNominations()
+                val nominees = repository.getAllNominees()
+
+                // Create a map to store nominee names using nomineeId as the key
+                val nomineeMap = nominees.associateBy { it.nomineeId }
+
+                val nominationsWithFullName = nominations.map { nomination ->
+                    val nominee = nomineeMap[nomination.nomineeId]
+                    val fullName =
+                        nominee?.let { "${it.firstName} ${it.lastName}" } ?: nomination.nomineeName
+                    nomination.copy(nomineeName = fullName)
+                }
 
                 // Switch to the main thread to update the UI
                 withContext(Dispatchers.Main) {
@@ -60,7 +71,7 @@ class MainActivity : AppCompatActivity() {
                         binding.nominationsList.adapter = adapter
 
                         // Submit the list of nominations to the adapter
-                        adapter.submitList(nominations)
+                        adapter.submitList(nominationsWithFullName)
 
                         // Make the RecyclerView visible
                         binding.nominationsList.visibility = View.VISIBLE

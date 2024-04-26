@@ -8,5 +8,6 @@ data class Nomination(
 	@SerializedName("reason") val reason: String,
 	@SerializedName("process") val process: String,
 	@SerializedName("date_submitted") val dateSubmitted: String,
-	@SerializedName("closing_date") val closingDate: String
+	@SerializedName("closing_date") val closingDate: String,
+	@SerializedName("nominee_name") val nomineeName: String?
 )

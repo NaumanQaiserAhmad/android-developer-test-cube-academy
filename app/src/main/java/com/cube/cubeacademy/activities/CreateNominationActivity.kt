@@ -214,7 +214,13 @@ class CreateNominationActivity : AppCompatActivity() {
             bottomSheetDialog.dismiss()
         }
         leaveButton.setOnClickListener {
-            super.onBackPressed()
+            // Used intent here instead of on back pressed because incase user comes here  from the submitted activty to create another
+            //nominee it takes them to submitted actived on back rather then home.
+            val intent = Intent(
+                this@CreateNominationActivity,
+                MainActivity::class.java
+            )
+            startActivity(intent)
         }
 
         bottomSheetDialog.setContentView(view)
