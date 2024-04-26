@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -43,19 +44,6 @@ class CreateNominationActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //populateUI()
-
-        mRadioGroupPlus = binding.radio
-        mRadioGroupPlus.setOnCheckedChangeListener(object :
-            RadioGroupExtension.OnCheckedChangeListener {
-            override fun onCheckedChanged(group: RadioGroupExtension?, checkedId: Int) {
-                Log.i("RadioGroupPlus", "onCheckedChanged:")
-                // Find the selected radio button using its ID
-                val radioButton = findViewById<RadioButton>(checkedId)
-                // Get the tag associated with the selected radio button
-                selectedRadio = radioButton.tag.toString()
-                checkConditionsAndEnableButton()
-            }
-        })
 
         // Launch a coroutine in a separate thread
         CoroutineScope(Dispatchers.IO).launch {
@@ -121,6 +109,39 @@ class CreateNominationActivity : AppCompatActivity() {
         // submit button
         binding.submitButton.setOnClickListener {
             onSubmitButtonClick()
+        }
+
+
+        //Handeling Radio Buttons and Parent Linear Layout selectios
+        mRadioGroupPlus = binding.radio
+        mRadioGroupPlus.setOnCheckedChangeListener(object :
+            RadioGroupExtension.OnCheckedChangeListener {
+            override fun onCheckedChanged(group: RadioGroupExtension?, checkedId: Int) {
+                Log.i("RadioGroupPlus", "onCheckedChanged:")
+                // Find the selected radio button using its ID
+                val radioButton = findViewById<RadioButton>(checkedId)
+                // Get the tag associated with the selected radio button
+                selectedRadio = radioButton.tag.toString()
+                checkConditionsAndEnableButton()
+            }
+        })
+
+        // Set OnClickListener to each LinearLayout
+        for (i in 0 until mRadioGroupPlus.childCount) {
+            val linearLayout = mRadioGroupPlus.getChildAt(i) as LinearLayout
+
+
+            linearLayout.setOnClickListener {
+                resetBackgroundColors()
+                // Find the associated RadioButton using its tag
+                val radioButtonTag = linearLayout.tag as String
+                val radioButtonId = resources.getIdentifier("${radioButtonTag}_radio_button", "id", packageName)
+                val radioButton = findViewById<RadioButton>(radioButtonId)
+
+                // Check the RadioButton
+                radioButton.isChecked = true
+                linearLayout.setBackgroundResource(R.drawable.bg_dark_border)
+            }
         }
     }
 
@@ -225,6 +246,14 @@ class CreateNominationActivity : AppCompatActivity() {
 
         bottomSheetDialog.setContentView(view)
         bottomSheetDialog.show()
+    }
+
+    // Function to reset background color of all LinearLayouts
+    private fun resetBackgroundColors() {
+        for (i in 0 until mRadioGroupPlus.childCount) {
+            val linearLayout = mRadioGroupPlus.getChildAt(i) as LinearLayout
+            linearLayout.setBackgroundResource(R.drawable.bg_reason_edittext)
+        }
     }
 
 }
